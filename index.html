@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+    .bg-image {
+      /* The image used */
+      background-image: url("images/1.jpg");
+
+      /* Add the blur effect */
+      filter: blur(5px);
+      -webkit-filter: blur(5px);
+
+      /* Full height */
+      height: 130%;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- header -->
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <a href="#" class="navbar-brand"><img src="images/icon.png" width="25%" height="40px">RAMAN</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse2">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse2">
+      <div class="navbar-nav">
+        <a href="index.html" class="nav-item nav-link">HOME</a>
+        <a href="#about" class="nav-item nav-link">ABOUT US</a>
+        <a href="#services" class="nav-item nav-link">SERVICES</a>
+        <a href="#team" class="nav-item nav-link">OUR TEAM</a>
+        <a href="#testimonial" class="nav-item nav-link">TESTIMONIAL</a>
+        <a href="#contact" class="nav-item nav-link">CONTACT US</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <div class="bg-image"></div>
+
+  <div class="bg-text">
+    <h2 style="color:white;">We Provide
+      <span
+      class="txt-rotate"
+      data-period="2000"
+      data-rotate='[ " FAMILY LAW ", " LEGAL LAW ", " CRIMINAL LAW ", " EDUCATION LAW ", " PROPERTY LAW ", " FINANCE LAW " ]'></span>
+    </h2>
+    <h5>We Providing </h5>
+    <a href="#services"><nav class="btn">
+      <ul>
+
+        <li>
+          Learn More
+          <span></span><span></span><span></span><span></span>
+        </li>
+
+      </ul>
+    </nav></a>
+  </div>
+  <script>
+    var TxtRotate = function(el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    };
+
+    TxtRotate.prototype.tick = function() {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+      var that = this;
+      var delta = 300 - Math.random() * 100;
+
+      if (this.isDeleting) { delta /= 2; }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+
+      setTimeout(function() {
+        that.tick();
+      }, delta);
+    };
+
+    window.onload = function() {
+      var elements = document.getElementsByClassName('txt-rotate');
+      for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-rotate');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtRotate(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+</script>
+
+<!-- header end -->
+
+<!-- About us-->
+<section id="about" class="pb-5">
+<div class="container">
+  <h1 id="h1"><span>About</span> Us</h1>
+  <br>
+
+  <div class="row">
+
+    <div class="col-sm-6">
+      <h2>What We Do ?</h2>
+      <p>RAMAN ASSOCIATES is a law firm based in India having international clientele in the jurisdiction of United States, Canada, Australia, India, Europe, Singapore, China and Japan. It caters to almost all important facets of laws in these jurisdictions and specializes in Patent, Copyright, Trademark, Corporate Laws, Designs, Litigation (Civil & Criminal) in Indian courts, Government Relations & Policy. RAMAN ASSOCIATES is professionally managed by 42 Attorneys, providing global legal services on 24 x 7 basis.</p><br>
+
+<p>The firm offers wide range of services in the areas of corporate, litigation, patents, trademarks, copyrights, designs and Legal Process Outsourcing – LPO.</p><br>
+
+<p>The underlying belief of the firm is to provide incredibly high-quality fast services at a low cost. A timely right advice could save a lot of time, efforts and costs for a client. This is where the firm utilizes its expertise and experience in creating value for its clients.</p>
+
+
+    </div>
+    <div class="col-sm-6">
+      <img src="images/ab.jpg" class="fluid" style="height:400px;width:100%;margin-top:50px;">
+    </div>
+
+
+
+  </div>
+</div>
+</section>
+<!-- About us end -->
+
+
+<!-- our services card-->
+<section id="services" class="pb-5 pt-4">
+  <div class="bg">
+    <br>
+    <h1> Our <span>Services</span></h1>
+    <div class="container">
+      <div class="row mt-4">
+       <div class="card-deck">
+         <div class="card col-sm-4">
+          <i class="fa fa-users" aria-hidden="true"></i>
+          <div class="card-body">
+            <h4 class="card-title">Family Law</h4>
+            <p class="card-text">Family Laws encompass the broad set of rules that are in practice regarding family matters, such as marriage, divorce, inheritance etc.</p>
+
+          </div>
+        </div> 
+
+        <div class="card col-sm-4">
+         <i class="fa fa-gavel" aria-hidden="true"></i>
+         <div class="card-body">
+          <h4 class="card-title">Legal Law</h4>
+          <p class="card-text">India has a common law legal system whose infrastructure bears the influence of British rule. The constitution is based on the Government of India Act.</p>
+
+        </div>
+      </div> 
+      <div class="card col-sm-4">
+       <i class="fa fa-user" aria-hidden="true"></i>
+       <div class="card-body">
+        <h4 class="card-title">Criminal Law</h4>
+        <p class="card-text">Indian criminal laws are divided into three major acts i.e. Indian Penal Code, 1860, Code of Criminal Procedure, 1973, and Indian Evidence Act, 1872.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="card-deck">
+   <div class="card col-sm-4">
+    <i class="fa fa-book" aria-hidden="true"></i>
+    <div class="card-body">
+      <h4 class="card-title">Education Law</h4>
+      <p class="card-text">Legal education in India is offered at different levels by the traditional universities and the specialised law universities and schools.</p>
+
+    </div>
+  </div> 
+
+  <div class="card col-sm-4" >
+    <i class="fa fa-home" aria-hidden="true"></i>
+    <div class="card-body">
+      <h4 class="card-title">Property Law</h4>
+      <p class="card-text">“Property” means property of any kind, whether movable or immovable, tangible or intangible, and includes any right or interest in such property.</p>
+      
+    </div>
+  </div> 
+  <div class="card col-sm-4">
+    <i class="fa fa-usd" aria-hidden="true"></i>
+    <div class="card-body">
+      <h4 class="card-title">Finance Law</h4>
+      <p class="card-text">Finance Act thus making this Act one that renews itself each year. All the Governmental financial policies are included in this Act. </p>
+
+    </div>
+  </div>
+</div>
+</div> 
+<br><br>
+
+</div>
+</div>
+</section>
+<!-- our services card End-->
+<!--- Our Team -->
+
+<section id="team" class="pb-5" id="#team">
+  <div class="container">
+    <h5 class="section-title h1">OUR <span>TEAM</span></h5>
+    <div class="row" >
+      <!-- Team member -->
+      <div class="col-xs-12 col-sm-6 col-md-4" id="flip-card">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p><img class="img-fluid" src="images/kp.jpg" alt="card image"></p>
+                  <h4 class="card-title">Keerthi Prasanna B.A.B.L</h4>
+                  <p class="card-text">He is my one of the Best Junior in my Team and he worked in more Cases in Supreme Court.</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-4">
+                  <h4 class="card-title">Keerthi Prasanna B.A.B.L</h4>
+                  <p class="card-text">My Profession is Lawyer as well as i am Running a software Company in all over chennai.</p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i id="fa-facebook" class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i  id="fa-twitter" class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i  id="fa-skype" class="fa fa-skype"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i  id="fa-google" class="fa fa-google"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ./Team member -->
+      <!-- Team member -->
+      <div class="col-xs-12 col-sm-6 col-md-4" id="flip-card">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p><img class=" img-fluid" src="images/manoj.jpg" alt="card image"></p>
+                  <h4 class="card-title">Manoj B.A.B.L</h4>
+                  <p class="card-text">I am going to complete babl in next arrear exam, but now iam junior law to Raman Sir.(Visaranai Kaithi aagavum pani yattrugiren)</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-4">
+                  <h4 class="card-title">Sunlimetech</h4>
+                  <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i id="fa-google" class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i id="fa-twitter" class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i id="fa-skype" class="fa fa-skype"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i id="fa-google" class="fa fa-google"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ./Team member -->
+      <!-- Team member -->
+      <div class="col-xs-12 col-sm-6 col-md-4" id="flip-card">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_03.png" alt="card image"></p>
+                  <h4 class="card-title">Sunlimetech</h4>
+                  <p class="card-text">This is basic card with image on top, title, description and button.</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-4">
+                  <h4 class="card-title">Sunlimetech</h4>
+                  <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i id="fa-facebook" class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i id="fa-twitter" class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i id="fa-skype" class="fa fa-skype"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i id="fa-google" class="fa fa-google"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ./Team member -->
+
+    </div>
+  </div>
+</section>
+
+<!--- Our Team End -->
+<!-- Center Bar -->
+
+<div  class="col-md-12" id="bar">
+  <div class="container">
+<br>
+<h3  style="margin-top:-1px;color:#fff">Get a Free Consultaiton for your <b>Legal Issues</b>?</h3>
+<a href="#contact"><nav class="btn" id="bar-btn">
+      <ul>
+
+        <li>
+          Contact Us
+          <span></span><span></span><span></span><span></span>
+        </li>
+
+      </ul>
+    </nav></a>
+</div>
+
+</div>
+<!-- Center Bar End -->
+<!--testimonial Wrapper-->
+
+<section id="testimonial" class="pb-5">
+<h1 id="h1t"><span>People</span> Says</h1>
+
+<div id="slider" class="carousel slide" data-ride="carousel" data-interval="3000">
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#slider" data-slide-to="0" class="active"></li>
+    <li data-target="#slider" data-slide-to="1"></li>
+    <li data-target="#slider" data-slide-to="2"></li>
+  </ol>
+  <!--/.Indicators-->
+  <!--Slides-->
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active" >
+      <div class="view">
+        <img class="rounded-circle" src="images/review.png"
+          alt="First slide">
+		  <p style="font-weight:800;font-size:20px;">--Revati Sonar--</p>
+       <p> I have complete confidence in Advocate Raman advice. He knows what he’s doing at all times – and dealing with the unexpected seems to be a specialty of his. I cannot recommend him highly enough. Adv Raman is brilliant.</p>
+      </div>
+     
+    </div>
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <img class="rounded-circle" src="images/review2.png" 
+          alt="Second slide">
+		  <p style="font-weight:800;font-size:20px;">--Saravana Kumar--</p>
+        <p>Adv Raman listened carefully and provided clear, thoughtful, sound advice that took into account the complexity of my situation. All of my dealings with him were handled with sensitivity and respect. I would definitely recommend the services of Adv Shailesh Raman Associates.</p>
+      </div>
+     
+    </div>
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <img class="rounded-circle" src="images/review1.png"
+          alt="Third slide">
+		  <p style="font-weight:800;font-size:20px;">--Arun Siranjivi--</p>
+        <p>What I liked about Advocate Raman is that throughout the entire process, there were numerous times where he guided me to take decisions that helped me save on legal fees. He also got me a nominal settlement deal which I could afford. I am really impressed by his skills as well as honesty.</p>
+      </div>
+     
+    </div>
+  </div>
+  <!--/.Slides-->
+ 
+</div>
+</section>
+<!--/.testimonial Wrapper-->
+
+
+
+
+
+<!--- parallax -->
+
+<div class="mb_parallax_container" id="mb_parallax_three">
+  <div class="mb_parallax_overlay">
+   <section class="counters">
+    <div class="container" id="counter">
+      <div>
+        <i  class="fa fa-user-o fa-2x"></i>
+        <div class="counter" data-count="1258">0</div>
+        <h3 id="h3">Cases</h3>
+      </div>
+      <div>
+        <i  class="fa fa-clock-o fa-2x"></i>
+        <div class="counter" data-count="168">0</div>
+        <h3 id="h3">Working Hours Per Week</h3>
+      </div>
+      <div>
+        <i  class="fa fa-files-o fa-2x"></i>
+        <div class="counter" data-count="1000">0</div>
+        <h3 id="h3">Projects Completed</h3>
+      </div>
+      <div>
+        <i  class="fa fa-handshake-o fa-2x"></i>
+        <div class="counter" data-count="250">0</div>
+        <h3 id="h3">Juniors</h3>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+<script>
+ var a = 0;
+$(window).scroll(function() {
+
+  var oTop = $('#counter').offset().top - window.innerHeight;
+  if (a == 0 && $(window).scrollTop() > oTop) {
+    $('.counter').each(function() {
+      var $this = $(this),
+        countTo = $this.attr('data-count');
+      $({
+        countNum: $this.text()
+      }).animate({
+          countNum: countTo
+        },
+
+        {
+
+          duration: 2000,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function() {
+            $this.text(this.countNum);
+          }
+
+        });
+    });
+    a = 1;
+  }
+
+});
+
+</script>
+
+
+
+
+
+<div class="code">
+  <h1>I am a <span class="type"></span></h1>
+</div>
+<script>
+  var typed = new Typed('.type', {
+    strings: ['Web Developer Team.', 'Shiak Mohideen.','Nethaji.','Riyaz.'],
+    typeSpeed: 60,
+    backSpeed: 60,
+    loop:true,
+  });
+</script>
+<script src="js/typed.min.js"></script>
+
+
+<!-- footer -->
+<section id="contact">
+<div class="container">
+  <footer>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h4> Reach Us</h4>
+        <center><span class="line"></span></center>
+        <br>
+        <form>
+          <div class="col">
+            <div class="mt-3">
+              <input type="text" class="form-control" placeholder="Your Name">
+            </div>
+          </div>
+          <div class="col">
+            <div class="mt-3">
+              <input type="number" class="form-control" placeholder="Your Mobile Number">
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="mt-3">
+              <input type="email" class="form-control" placeholder="Enter Your Email">
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="mt-3">
+              <textarea rows="2"  class="form-control" placeholder="Message" ></textarea>
+            </div>
+          </div>
+          <div class="col">
+            <div class="mt-3">
+              <input type="submit" class="btn btn-danger" value="submit">
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+      <div class="col-md-6" id="c-info">
+        <h4>Contact Info</h4>
+
+        <center><span class="line"></span></center>
+
+       <i id="fa2" class="fa fa-map-marker" aria-hidden="true"></i><b>Address :</b>No:28/33, 1st New Street,<span id="add1"> Lakshmipuram,Chromepet,</span><span id="add"> Chennai - 600044.</span></p> 
+        <p><i id="fa2" class="fa fa-phone" aria-hidden="true"></i><b>Phone :</b> +91 7356889904</p>
+        <p><i id="fa2" class="fa fa-envelope" aria-hidden="true"></i><b>E-mail :</b> ramanbabl37@gmail.com</p>
+
+
+        <a href="#" id="fa" class="fa fa-facebook" style="text-decoration:none;"></a>
+        <a href="#" id="fa" class="fa fa-twitter" style="text-decoration:none;"></a>
+        <a href="#" id="fa" class="fa fa-instagram" style="text-decoration:none;"></a>
+        <a href="#" id="fa" class="fa fa-linkedin" style="text-decoration:none;"></a>
+      </div>
+
+    </div>
+
+  </footer>
+</div>
+</section>
+
+<!-- footer End-->
+<!-- back to top-->
+<a id="button"></a>
+
+<script>
+var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '100');
+});
+
+</script>
+<!-- back to top end-->
+
+</body>
+</html>
